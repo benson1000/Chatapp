@@ -1,0 +1,53 @@
+  <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
+    <section class="work">
+      <div class="container mt-5">
+        <div class="row mt-4">
+          <div class="col-md-4 mb-4">
+            <h6 class="text-uppercase fw-bold">What is ChatApp?</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p class="what">
+               ChatApp is a real-time chat application built using Ruby on Rails and ActionCable. 
+               It allows users to sign up, log in, create chat rooms, and send messages in real-time. 
+               With private messaging, file sharing, and notifications, ChatApp provides a seamless 
+               chatting experience. With its intuitive interface and rich features, 
+               ChatApp redefines the way people interact online, making it a go-to platform for 
+               socializing, collaborating, and staying connected.
+            </p>
+          </div>
+          <div class="col-md-2 mb-4">
+            <h6 class="text-uppercase fw-bold">About US</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p>
+              <%= link_to "About", about_path, class: "nav-link" %>
+            </p>
+            <p>
+              <%= link_to "Sign Up", new_user_registration_path, method: :get, class: 'nav-link' %>
+            </p>
+            <p>
+              <%= link_to "Log In", new_user_session_path, method: :get, class: 'nav-link' %>
+            </p>
+          </div>
+          <div class="col-md-3 mb-4">
+            <h6 class="text-uppercase fw-bold">Nairobi Office</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i> Sarit Centre, Westlands, Nairobi</p>
+            <p><i class="fa fa-address-card" aria-hidden="true"></i> P.O Box - 49045-00100, Nairobi</p>
+            <p><i class="fa fa-envelope" aria-hidden="true"></i> chatapp@gmail.com</p>
+            <p><i class="fa fa-phone-square" aria-hidden="true"></i> office: +(254) 798765432</p>
+          </div>
+          <div class="col-md-3 mb-4">
+            <h6 class="text-uppercase fw-bold">Our social media handles</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a></p>
+				    <p><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a></p>
+				    <p><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a></p>
+				    <p><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="text-left" style="background-color: rgba(0, 0, 0, 0.6); height: 5rem; align-items: center; color: white; padding-left: 50px;">
+      <p class="mb-0">&copy; 2020 - <%= link_to "ChatAPP", root_path, class: "nav-link" "style= color: 'white';" %></p>
+    </div>
+  </footer>
