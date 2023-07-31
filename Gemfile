@@ -57,7 +57,7 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 
 #this is for the client side validation error rendering
-#gem 'client_side_validations'
+gem 'client_side_validations'
 
 gem 'jquery-rails', '~> 4.3'
 

@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  mount ActionCable.server => '/cable'
+  # Define the messages route
+  get '/messages', to: 'messages#index', as: :messages
   get '/about', to: "pages#about"
   root "pages#home"
 end

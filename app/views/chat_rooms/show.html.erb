@@ -1,0 +1,55 @@
+<!-- app/views/chat_rooms/show.html.erb -->
+<h1><%= @chat_room.name %></h1>
+
+<!-- Display messages in the chat room -->
+<div id="chat-messages">
+  <!-- Add messages here -->
+</div>
+
+<!-- Form to send messages -->
+<form id="message-form">
+  <input type="text" name="content" placeholder="Type your message...">
+  <input type="submit" value="Send">
+</form>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Get the chat room ID from the view
+    const chatRoomId = <%= @chat_room.id %>;
+
+    // Connect to the ChatRoomChannel (same as before)
+
+    // Send message on form submit
+    const messageForm = document.getElementById("message-form");
+    messageForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const content = messageForm.elements["content"].value;
+      // Send the message to the server
+      chatRoomChannel.send({ content: content, chat_room_id: chatRoomId });
+      // Clear the input field
+      messageForm.elements["content"].value = "";
+    });
+  });
+</script>
+
+
+
+<!-- app/views/chat_rooms/show.html.erb -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Get the chat room ID from the view
+    const chatRoomId = <%= @chat_room.id %>;
+
+    // Connect to the ChatRoomChannel
+    const cable = ActionCable.createConsumer();
+    const chatRoomChannel = cable.subscriptions.create(
+      { channel: 'ChatRoomChannel', id: chatRoomId },
+      {
+        received: (data) => {
+          // This function is called when a new message is received from the server
+          // Implement any logic to display the new message in the chat room UI
+        },
+      }
+    );
+  });
+</script>
