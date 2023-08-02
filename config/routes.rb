@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   mount ActionCable.server => '/cable'
   # Define the messages route
-  get '/messages', to: 'messages#index', as: :messages
+  #get '/messages', to: 'messages#index', as: :messages
+  resources :messages, only: [:index, :create]
   get '/about', to: "pages#about"
   root "pages#home"
 end
