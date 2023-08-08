@@ -6,9 +6,9 @@
             </button>
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <% if user_signed_in? %>
-                    <p><i class="fa fa-envelope"></i>Email: <%= current_user.email %></p>
-                    <p><i class="fa fa-user-circle"></i> username: <%= current_user.username %></p>
-                    <%= button_to "Log out", destroy_user_session_path, class: 'btn btn-primary navbar-btn', method: :delete, id: "log" %>
+                    <ul class="navbar-nav navbar-right m-auto">
+                        <%= button_to "Log out", destroy_user_session_path, class: 'btn btn-primary navbar-btn', method: :delete, id: "log" %>
+                    </ul>
                 <% else %>
                     <%= link_to root_path, class: 'navbar-brand' do %>
                         <i class="fa fa-comments" aria-hidden="true"></i>

@@ -1,7 +1,6 @@
 <div class="container-fluid">
-    <h1 class="display-3">Messages</h1>
-
-    <div class="container-fluid" id="messages-container">
+    <br/>
+    <div class="container" id="messages-container">
         <% @messages.each do |message| %>
             <div class="message form-group">
             <p class="lead"><strong><%= message.user.username %>:</strong> <%= message.content %></p>
